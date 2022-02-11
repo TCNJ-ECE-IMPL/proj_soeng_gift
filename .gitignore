@@ -1,0 +1,12 @@
+*.lst
+*.o
+*.bak
+*.log
+*.ld
+*codegentemp*
+*.zip
+*.elf
+*.hex
+*.map
+*.DS_Store
+*.icloud
