@@ -98,8 +98,8 @@ extern uint8  PWM_1_initVar;
 /* Parameters */
 #define PWM_1_PWM_KILL_EVENT                 (0lu)
 #define PWM_1_PWM_STOP_EVENT                 (0lu)
-#define PWM_1_PWM_MODE                       (6lu)
-#define PWM_1_PWM_OUT_N_INVERT               (1lu)
+#define PWM_1_PWM_MODE                       (4lu)
+#define PWM_1_PWM_OUT_N_INVERT               (0lu)
 #define PWM_1_PWM_OUT_INVERT                 (0lu)
 #define PWM_1_PWM_ALIGN                      (0lu)
 #define PWM_1_PWM_RUN_MODE                   (0lu)
@@ -121,7 +121,7 @@ extern uint8  PWM_1_initVar;
 #define PWM_1_PWM_SWITCH_SIGNAL_PRESENT      (0lu)
 
 /* Interrupt Mask */
-#define PWM_1_PWM_INTERRUPT_MASK             (0lu)
+#define PWM_1_PWM_INTERRUPT_MASK             (1lu)
 
 
 /***************************************
@@ -135,10 +135,10 @@ extern uint8  PWM_1_initVar;
 #define PWM_1_TC_COMPARE_SWAP                (0lu)
 
 /* PWM Mode */
-#define PWM_1_PWM_PERIOD_VALUE               (2lu)
+#define PWM_1_PWM_PERIOD_VALUE               (256lu)
 #define PWM_1_PWM_PERIOD_BUF_VALUE           (65535lu)
 #define PWM_1_PWM_PERIOD_SWAP                (0lu)
-#define PWM_1_PWM_COMPARE_VALUE              (1lu)
+#define PWM_1_PWM_COMPARE_VALUE              (128lu)
 #define PWM_1_PWM_COMPARE_BUF_VALUE          (65535lu)
 #define PWM_1_PWM_COMPARE_SWAP               (0lu)
 

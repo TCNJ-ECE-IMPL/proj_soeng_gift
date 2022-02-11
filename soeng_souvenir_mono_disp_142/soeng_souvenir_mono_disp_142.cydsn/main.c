@@ -52,8 +52,6 @@
 
 #define ZER_BIT (0x380)
 #define ONE_BIT (0x3F8)
-#define LED_STR_LEN (144)
-
 
 uint16_t chimes[] = { 
     E4, GS4, FS4, B3, B3,
@@ -159,13 +157,79 @@ void put_cmds_to_disp( uint16_t disp_cmds[8][4] )
     }
 }
 
+// ms is a value from 0 to 7999 (8 second cycle)
+void ms_to_colors( int ms, uint8_t *color_vals )
+{
+    int r;
+    int g;
+    int b;
+    
+    int fade;
+    
+    // cross from yellow to blue, then blue for 3 secs, the cross from blue to yellow, then yellow for 3 secs
+    if (ms < 1000)
+    {
+        fade = 256 * ms / 1000;
+        
+        b = fade;
+        r = g = 255-fade;
+    }
+    else if (ms < 4000)
+    {
+        b = 255;
+        r = g = 0;
+    }
+    else if (ms < 5000)
+    {
+        fade = 256 * (ms-4000) / 1000;
+        b = 255-fade;
+        r = g = fade;
+    }
+    else
+    {
+        b = 0;
+        r = g = 255;
+    }
+    // order is GRB!
+    color_vals[0] = g;
+    color_vals[1] = r;
+    color_vals[2] = b;
+}
+
+#define LED_STR_LEN (5)
+void update_acrylic_leds( uint8_t vals[3] )
+{
+    // First send reset ... at least 50 usec
+    FRAME_SYNC_Write(1);
+    for (int rst_cnt = 0; rst_cnt < 300; ++rst_cnt)
+        SPI_1_SpiUartWriteTxData(0);
+    FRAME_SYNC_Write(0);
+
+    // 24-bit format
+    //  G7 G6 G5 G4 G3 G2 G1 G0 R7 R6 R5 R4 R3 R2 R1 R0 B7 B6 B5 B4 B3 B2 B1 B0
+    for (int col = 0; col < LED_STR_LEN; ++col)
+    {
+        for (int clr = 0; clr < 3; ++clr)
+        {
+            int the_val = vals[clr];
+            
+            // each bit is a 2-byte pattern for PWM'ing
+            for (int bit_idx = 7; bit_idx >= 0; --bit_idx)            
+                if ((the_val >> bit_idx) & 1)
+                    // send ONE_BIT
+                    SPI_1_SpiUartWriteTxData(ONE_BIT);
+                else
+                    // send ZER_BIT
+                    SPI_1_SpiUartWriteTxData(ZER_BIT);
+        }
+    }
+}
+
 int main(void)
 {
     char the_string[] = "ROAR   TCNJ Engineering -- Designing The Future!!!!    12OO";
     
     uint8_t str_pels[5][8];
-    
-    int     stopped = 0;
     
 //    uint16_t buf[8][4] = { 
 //        { 0x01CC, 0x0155, 0x01AA, 0x01F0 },
@@ -180,74 +244,21 @@ int main(void)
     
     uint16_t disp_cmds[8][4];
 
-    int count_us=0;
+    int count_ms=0;
     
     CyGlobalIntEnable;
 
+    isr_1_Start();
     SPIM_Start();
     SPI_1_Start();
+    PWM_1_Start();
 
-    uint8_t led_arr[LED_STR_LEN][3];
-
-    // Set up an interesting test pattern
-    for (int col = 0; col < LED_STR_LEN; ++col)
-    {
-        for (int clr = 0; clr < 3; ++clr)
-        {
-            if (clr == (col % 3))
-                led_arr[col][clr] = 0x1; // row*64+col; //* rand();
-            else
-                led_arr[col][clr] = 0;
-        }
-    }
-    
-    //while (SW3_Read() == 1) {}
-    
-    
     configure_max7219();
-    
-//    while (1)
-//    {
-//        for (int i = 0; i < (int) sizeof(chimes)/2; ++i)
-//        {
-//            PWM_WritePeriod(chimes[i]);
-//            PWM_WriteCompare(chimes[i]/2);
-//            CyDelay(1000);
-//        }
-//    }
-//    for (int row = 0; row < 8; ++row)
-//    {
-//        while (!(SPIM_ReadTxStatus() & SPIM_STS_SPI_IDLE)) {}
-//        SPIM_PutArray( &buf[row][0], 4 );    // send 4 bytes, in one transaction
-//    }
     
     while (1)
     {
-        // First send reset ... at least 50 usec
-        FRAME_SYNC_Write(1);
-        for (int rst_cnt = 0; rst_cnt < 300; ++rst_cnt)
-            SPI_1_SpiUartWriteTxData(0);
-        FRAME_SYNC_Write(0);
-
-        // 24-bit format
-        //  G7 G6 G5 G4 G3 G2 G1 G0 R7 R6 R5 R4 R3 R2 R1 R0 B7 B6 B5 B4 B3 B2 B1 B0
-        for (int col = 0; col < LED_STR_LEN; ++col)
-        {
-            for (int clr = 0; clr < 3; ++clr)
-            {
-                int the_val = led_arr[col][clr];
-                
-                // each bit is a 2-byte pattern for PWM'ing
-                for (int bit_idx = 7; bit_idx >= 0; --bit_idx)            
-                    if ((the_val >> bit_idx) & 1)
-                        // send ONE_BIT
-                        SPI_1_SpiUartWriteTxData(ONE_BIT);
-                    else
-                        // send ZER_BIT
-                        SPI_1_SpiUartWriteTxData(ZER_BIT);
-            }
-        }
-
+        uint8_t color_vals[3];
+        
         // Do dot matrix display
         for (int loop = 0; loop < 100; ++loop)
         {
@@ -256,13 +267,9 @@ int main(void)
             put_cmds_to_disp( disp_cmds );
             
             CyDelay(33);
-        }
-        
-        if (!stopped)
-        {
-            PWM_1_Start();
-            PWM_1_WritePeriod(2);
-            PWM_1_WriteCompare(1);
+            count_ms += 33;
+            ms_to_colors( count_ms % 8000, color_vals );
+            update_acrylic_leds( color_vals );
         }
         
         for (int str_idx = 0; str_idx < (int)strlen(the_string) - 4; ++str_idx)
@@ -277,65 +284,17 @@ int main(void)
                 put_cmds_to_disp( disp_cmds );
                 
                 CyDelay(33);
-                count_us += 33;
-                
-                int n_chimes = sizeof(chimes)/2;
-                int secs = count_us/800;
-                
-                if (secs < n_chimes)
-                {
-                    PWM_1_WritePeriod(chimes[secs]);
-                    PWM_1_WriteCompare(chimes[secs]/2);
-                }
-                else
-                {
-                    PWM_1_Stop();
-                    stopped = 1;
-                }
+                count_ms += 33;
+                ms_to_colors( count_ms % 8000, color_vals );
+                update_acrylic_leds( color_vals );
             }
         }
         while (1)
         {
             CyDelay(33);
-            count_us += 33;
-            
-            int n_chimes = sizeof(chimes)/2;
-            int secs = count_us/800;
-            
-            if (secs < n_chimes)
-            {
-                PWM_1_WritePeriod(chimes[secs]);
-                PWM_1_WriteCompare(chimes[secs]/2);
-            }
-            else
-            {
-                PWM_1_Stop();
-                stopped = 1;
-            }
-            // First send reset ... at least 50 usec
-            FRAME_SYNC_Write(1);
-            for (int rst_cnt = 0; rst_cnt < 300; ++rst_cnt)
-                SPI_1_SpiUartWriteTxData(0);
-            FRAME_SYNC_Write(0);
-
-            // 24-bit format
-            //  G7 G6 G5 G4 G3 G2 G1 G0 R7 R6 R5 R4 R3 R2 R1 R0 B7 B6 B5 B4 B3 B2 B1 B0
-            for (int col = 0; col < LED_STR_LEN; ++col)
-            {
-                for (int clr = 0; clr < 3; ++clr)
-                {
-                    int the_val = ((secs >> clr) & 1) * 255;
-                    
-                    // each bit is a 2-byte pattern for PWM'ing
-                    for (int bit_idx = 7; bit_idx >= 0; --bit_idx)            
-                        if ((the_val >> bit_idx) & 1)
-                            // send ONE_BIT
-                            SPI_1_SpiUartWriteTxData(ONE_BIT);
-                        else
-                            // send ZER_BIT
-                            SPI_1_SpiUartWriteTxData(ZER_BIT);
-                }
-            }
+            count_ms += 33;
+            ms_to_colors( count_ms % 8000, color_vals );
+            update_acrylic_leds( color_vals );
         }
     }
 }

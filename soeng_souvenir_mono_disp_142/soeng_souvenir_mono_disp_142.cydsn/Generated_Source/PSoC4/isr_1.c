@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: isr_1.c  
-* Version 1.70
+* Version 1.71
 *
 *  Description:
 *   API for controlling the state of an interrupt.
@@ -27,7 +27,13 @@
 *  Place your includes, defines and code here 
 ********************************************************************************/
 /* `#START isr_1_intc` */
-
+#include "project.h"
+#include "roar_dat.h"
+    
+static int cur_sound_idx = 0;
+    
+#define NUM_SAMPS (sizeof(roar))
+    
 /* `#END` */
 
 extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
@@ -164,7 +170,20 @@ CY_ISR(isr_1_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START isr_1_Interrupt` */
-
+    if (cur_sound_idx < (int) NUM_SAMPS)
+    {
+        int val = roar[cur_sound_idx] - 128;
+        
+        //val = val * 2;
+        if (val > 126)  val = 126; 
+        if (val < -126) val = -126;
+        PWM_1_WriteCompare(val + 128);
+        
+        ++cur_sound_idx;
+    }
+    PWM_1_ClearInterrupt(PWM_1_INTR_MASK_TC);
+    isr_1_ClearPending();
+    
     /* `#END` */
 }
 
@@ -252,7 +271,7 @@ void isr_1_SetPriority(uint8 priority)
     uint32 priorityOffset = ((isr_1__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *isr_1_INTC_PRIOR = (*isr_1_INTC_PRIOR & (uint32)(~isr_1__INTC_PRIOR_MASK)) |
+    *isr_1_INTC_PRIOR = (*isr_1_INTC_PRIOR & (uint32)(~(uint32)isr_1__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }
