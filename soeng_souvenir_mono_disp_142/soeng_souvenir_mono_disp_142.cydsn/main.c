@@ -1,5 +1,6 @@
+#include <stdio.h>
 #include "project.h"
-#include "fonts.h"
+#include "led_mat_displ.h"
 
 #define C3 (61156)
 #define CS3 (57724)
@@ -60,102 +61,13 @@ uint16_t chimes[] = {
     B3, FS4, GS4, E4, E4,
     Z,  Z,   Z,   Z,  E3, E3, E3, Z, E3, E3, E3, Z, E3, E3, E3, Z};
 
-void replicate_cmd( uint16_t the_cmd )
-{
-    uint16_t repl_cmds[4];
-    
-    for (int i = 0; i < 4; ++i)
-        repl_cmds[i] = the_cmd;
-        
-    while (!(SPIM_ReadTxStatus() & SPIM_STS_SPI_IDLE)) {}
-    SPIM_PutArray( repl_cmds, 4 );    // send 4 bytes, in one transaction
+volatile uint8_t  str_pels[5][8];
+volatile uint16_t disp_cmds[8][4];
+volatile int      splashing_flag = 1;
 
-}
-
-void configure_max7219()
-{
-    replicate_cmd(0x0B07); // There are 8 rows, and each row is like a "digit",
-                              // so set Scan Limit register to 7, for 8 digits
-
-    replicate_cmd(0x0900); // For raw, set Decode Mode to No Decode (0)
-
-    replicate_cmd(0x0F00); // Set Display Test register to Normal Operation(0)
-    
-    replicate_cmd(0x0C01); // Set Shutdown Mode register for Normal Operation (1)
-
-    replicate_cmd(0x0A01); // Set light intensity to low value
-}
-
-
-void char_to_pels( uint8_t the_char, uint8_t the_pels[8] )
-{
-    uint8_t transpose[8];
-    
-    for (int i = 0; i < 8; ++i)
-        transpose[i] = fonts[the_char][i];
-
-    // Transpose to normal
-    for (int out_row_idx = 0; out_row_idx < 8; ++out_row_idx)
-    {
-        int pel_val = 0;
-        for (int out_bit_idx = 7; out_bit_idx >= 0; --out_bit_idx)
-        {
-            int in_row_idx = 7 - out_bit_idx;
-            pel_val |= (((transpose[in_row_idx] >> out_row_idx) & 1)<<out_bit_idx);
-        }
-        the_pels[out_row_idx] = pel_val;
-    }
-}
-
-void get_pels_from_str( char *the_str, int str_idx, int num_chars, uint8_t str_pels[5][8] )
-{
-    
-    for (int i = 0; i < num_chars; ++i)
-        char_to_pels(the_str[str_idx+i], &str_pels[i][0] );   
-}
-
-void get_disp_cmds_frac_shift( uint8_t str_pels[5][8], int frac_shift, uint16_t disp_cmds[8][4], int vshift )
-{
-    for (int row_cnt = 0; row_cnt < 8; ++row_cnt)
-    {
-        uint64_t long_word=0;
-        
-        int raw_row_idx = row_cnt + vshift;
-        
-        int row_idx = raw_row_idx;
-        
-        if (row_idx < 0) row_idx = 0;
-        if (row_idx > 7) row_idx = 7;
-        
-        for (int char_idx = 0; char_idx < 5; ++char_idx)
-        {
-            uint64_t the_pels = str_pels[char_idx][row_idx];
-            uint64_t shift_amt = 8*(4-char_idx);
-            
-            long_word |= (the_pels << shift_amt);
-        }
-        
-        if (raw_row_idx < 0) long_word = 0;
-        if (raw_row_idx > 7) long_word = 0;
-        
-        for (int char_idx = 0; char_idx < 4; ++char_idx)
-        {
-            uint64_t bits_lsb = (4-char_idx)*8-frac_shift;
-            uint32_t char_pels = (long_word >> bits_lsb) & 0xFF;
-            
-            disp_cmds[row_cnt][char_idx] = ((row_cnt+1) << 8) + char_pels;
-        }
-    }
-}
-
-void put_cmds_to_disp( uint16_t disp_cmds[8][4] )
-{
-    for (int row = 0; row < 8; ++row)
-    {
-        while (!(SPIM_ReadTxStatus() & SPIM_STS_SPI_IDLE)) {}
-        SPIM_PutArray( &disp_cmds[row][0], 4 );    // send 4 bytes, in one transaction
-    }
-}
+extern volatile int clk_hrs;
+extern volatile int clk_min;
+extern volatile int clk_sec;
 
 // ms is a value from 0 to 7999 (8 second cycle)
 void ms_to_colors( int ms, uint8_t *color_vals )
@@ -200,10 +112,10 @@ void ms_to_colors( int ms, uint8_t *color_vals )
 void update_acrylic_leds( uint8_t vals[3] )
 {
     // First send reset ... at least 50 usec
-    FRAME_SYNC_Write(1);
+    //FRAME_SYNC_Write(1);
     for (int rst_cnt = 0; rst_cnt < 300; ++rst_cnt)
         SPI_1_SpiUartWriteTxData(0);
-    FRAME_SYNC_Write(0);
+    //FRAME_SYNC_Write(0);
 
     // 24-bit format
     //  G7 G6 G5 G4 G3 G2 G1 G0 R7 R6 R5 R4 R3 R2 R1 R0 B7 B6 B5 B4 B3 B2 B1 B0
@@ -227,9 +139,8 @@ void update_acrylic_leds( uint8_t vals[3] )
 
 int main(void)
 {
-    char the_string[] = "ROAR   TCNJ Engineering -- Designing The Future!!!!    12OO";
-    
-    uint8_t str_pels[5][8];
+    char the_string[]  = "ROAR   TCNJ Engineering -- Designing The Future!!!!    ";
+    char full_string[sizeof(the_string) + 4];
     
 //    uint16_t buf[8][4] = { 
 //        { 0x01CC, 0x0155, 0x01AA, 0x01F0 },
@@ -242,60 +153,135 @@ int main(void)
 //        { 0x08CC, 0x0855, 0x08AA, 0x08F0 }
 //    };
     
-    uint16_t disp_cmds[8][4];
 
     int count_ms=0;
     
     CyGlobalIntEnable;
 
     isr_1_Start();
+    isr_1_hz_Start();
     SPIM_Start();
     SPI_1_Start();
     PWM_1_Start();
-
+    RTC_Counter_Start();
+    
     configure_max7219();
     
-    while (1)
+    uint8_t color_vals[3];
+    
+    // Do vibrating ROAR
+    for (int loop = 0; loop < 66; ++loop)
     {
-        uint8_t color_vals[3];
+        get_pels_from_str( "ROAR ", 0, 5, str_pels );
+        get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, -(loop&1) );
+        put_cmds_to_disp( disp_cmds );
         
-        // Do dot matrix display
-        for (int loop = 0; loop < 100; ++loop)
+        CyDelay(33);
+        count_ms += 33;
+        ms_to_colors( count_ms % 8000, color_vals );
+        update_acrylic_leds( color_vals );
+    }
+
+    sprintf(full_string, "%s%2d%02d", the_string, clk_hrs, clk_min);
+    for (int str_idx = 0; str_idx < (int)strlen(full_string) - 4; ++str_idx)
+    {
+        for (int frac_shift = 0; frac_shift < 8; ++frac_shift)
         {
-            get_pels_from_str( "ROAR ", 0, 5, str_pels );
-            get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, -(loop&1) );
+            // Get pixels for the next 5 characters
+            get_pels_from_str( full_string, str_idx, 5, str_pels );
+            
+            get_disp_cmds_frac_shift( str_pels, frac_shift, disp_cmds, 0 );
+
             put_cmds_to_disp( disp_cmds );
             
-            CyDelay(33);
-            count_ms += 33;
-            ms_to_colors( count_ms % 8000, color_vals );
-            update_acrylic_leds( color_vals );
-        }
-        
-        for (int str_idx = 0; str_idx < (int)strlen(the_string) - 4; ++str_idx)
-        {
-            for (int frac_shift = 0; frac_shift < 8; ++frac_shift)
-            {
-                // Get pixels for the next 5 characters
-                get_pels_from_str( the_string, str_idx, 5, str_pels );
-                
-                get_disp_cmds_frac_shift( str_pels, frac_shift, disp_cmds, 0 );
-
-                put_cmds_to_disp( disp_cmds );
-                
+            if (SW_HRS_Read() && SW_MIN_Read())
+                // Fast forward if either button down
                 CyDelay(33);
-                count_ms += 33;
-                ms_to_colors( count_ms % 8000, color_vals );
-                update_acrylic_leds( color_vals );
-            }
-        }
-        while (1)
-        {
-            CyDelay(33);
+                
             count_ms += 33;
             ms_to_colors( count_ms % 8000, color_vals );
             update_acrylic_leds( color_vals );
         }
     }
+    splashing_flag = 0;
+    while (1)
+    {
+        static int sw_hrs_down = 0;
+        static int sw_min_down = 0;
+        
+        CyDelay(33);
+        count_ms += 33;
+        ms_to_colors( count_ms % 8000, color_vals );
+        update_acrylic_leds( color_vals );
+        
+        isr_1_hz_Disable();
+        if (SW_HRS_Read())
+        {
+            sw_hrs_down = 0;    // button is up
+        }
+        else
+        {
+            if (sw_hrs_down == 0)
+            {
+                // Just went from up to down, increment
+                if (clk_hrs == 12)
+                    clk_hrs = 1;
+                else
+                    ++clk_hrs;
+            }
+            else if (sw_hrs_down > 30)
+            {
+                if ((sw_hrs_down % 8) == 0)
+                {
+                    if (clk_hrs == 12)
+                        clk_hrs = 1;
+                    else
+                        ++clk_hrs;
+                }
+            }
+            ++sw_hrs_down;
+        }
+
+        if (SW_MIN_Read())
+        {
+            sw_min_down = 0;    // button is up
+        }
+        else
+        {
+            if (sw_min_down == 0)
+            {
+                // Just went from up to down, increment
+                if (clk_min == 59)
+                    clk_min = 0;
+                else
+                    ++clk_min;
+            }
+            else if (sw_min_down > 30)
+            {
+                if ((sw_min_down % 4) == 0)
+                {
+                    if (clk_min == 59)
+                        clk_min = 0;
+                    else
+                        ++clk_min;
+                }
+            }
+            ++sw_min_down;
+        }
+
+        char time_str[5];
+        sprintf( time_str, "%2d%02d", clk_hrs, clk_min );
+        get_pels_from_str( time_str, 0, 5, str_pels );
+        
+        if (clk_sec & 1)
+            str_pels[0][0] &= 0x7F;
+        else
+            str_pels[0][0] |= 0x80;
+            
+        get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, 0 );
+        put_cmds_to_disp( disp_cmds );
+
+        isr_1_hz_Enable();
+    } // while (1) for lights
 }
 

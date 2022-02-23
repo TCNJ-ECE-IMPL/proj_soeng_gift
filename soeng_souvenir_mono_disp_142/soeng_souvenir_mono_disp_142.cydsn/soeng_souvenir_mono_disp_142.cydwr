@@ -13,7 +13,9 @@
     <Group key="Pin">
       <Data key="1fc496b9-4892-43c4-a4f9-d11a208c71d8" value="LED_DOUT" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="MISO" />
+      <Data key="09ba9091-ff90-4e65-a3e5-e759c36776c8" value="SW_HRS" />
       <Data key="9c368b4e-d8fb-466d-a7c7-ba7d15f1cf10" value="SS" />
+      <Data key="18fde913-8c60-4554-addf-33cfee70528f" value="SW_MINS" />
       <Data key="24de50f1-ebe1-4aae-bf50-d913fbef6353" value="LED_SCLKnc" />
       <Data key="56d0c879-41b6-4977-94e8-cd98ac6f0f8e" value="SCLK" />
       <Data key="341a8268-49ef-4dfb-8f8e-c68f8464cfa7" value="LED_SS_nc" />
@@ -21,6 +23,7 @@
       <Data key="a1dc702b-2163-4673-b438-32b7ba8061b9" value="PWMn" />
       <Data key="b2a9884a-9970-4232-b130-8fef8306193f" value="PWM" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="MOSI" />
+      <Data key="ef255f53-e3dd-45c1-ba9f-ae37eea6dcfd" value="SW_HRS" />
     </Group>
   </Group>
   <Group key="FlashSecurity">
@@ -3569,14 +3572,19 @@
         <Data key="Port Format" value="0,3" />
       </Group>
     </Group>
+    <Group key="09ba9091-ff90-4e65-a3e5-e759c36776c8">
+      <Group key="0">
+        <Data key="Port Format" value="1,7" />
+      </Group>
+    </Group>
     <Group key="9c368b4e-d8fb-466d-a7c7-ba7d15f1cf10">
       <Group key="0">
         <Data key="Port Format" value="0,2" />
       </Group>
     </Group>
-    <Group key="24de50f1-ebe1-4aae-bf50-d913fbef6353">
+    <Group key="18fde913-8c60-4554-addf-33cfee70528f">
       <Group key="0">
-        <Data key="Port Format" value="1,7" />
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
     <Group key="56d0c879-41b6-4977-94e8-cd98ac6f0f8e">
@@ -3609,7 +3617,16 @@
         <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
-    <Group key="UnAssigned Pins" />
+    <Group key="ef255f53-e3dd-45c1-ba9f-ae37eea6dcfd">
+      <Group key="0">
+        <Data key="Port Format" value="1,7" />
+      </Group>
+    </Group>
+    <Group key="UnAssigned Pins">
+      <Group key="24de50f1-ebe1-4aae-bf50-d913fbef6353">
+        <Data key="0" value="132900029719145307" />
+      </Group>
+    </Group>
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

@@ -37,9 +37,11 @@
       <Folder BuildType="STRICT" Path="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn">
         <Files Root="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
+          <File BuildType="BUILD" Toolchain="">led_mat_displ.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">fonts.h</File>
           <File BuildType="BUILD" Toolchain="">roar_dat.h</File>
+          <File BuildType="BUILD" Toolchain="">led_mat_displ.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4">
@@ -121,6 +123,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_3.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn_aliases.h</File>
@@ -147,10 +151,19 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_SCLKnc.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_SCLKnc.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_SCLKnc_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_SCLKnc_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1_hz.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1_hz.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
