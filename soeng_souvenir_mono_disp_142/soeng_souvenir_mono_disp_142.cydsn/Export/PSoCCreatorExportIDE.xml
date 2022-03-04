@@ -112,9 +112,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MISO.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MISO_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MISO_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_1_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_aliases.h</File>
@@ -123,12 +120,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWMn_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_SPI_UART.h</File>
@@ -141,6 +132,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_SPI_UART_PVT.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_PVT.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_BOOT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_4.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_4.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_SCBCLK.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_1_SCBCLK.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_DOUT.c</File>
@@ -151,11 +144,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\FRAME_SYNC_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1_hz.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1_hz.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC_Counter_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_HRS_aliases.h</File>
@@ -164,6 +152,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW_MIN_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PrISM_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PrISM_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PrISM_1_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

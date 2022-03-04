@@ -65,9 +65,9 @@ volatile uint8_t  str_pels[5][8];
 volatile uint16_t disp_cmds[8][4];
 volatile int      splashing_flag = 1;
 
-extern volatile int clk_hrs;
-extern volatile int clk_min;
-extern volatile int clk_sec;
+volatile int clk_hrs = 12;
+volatile int clk_min = 0;
+volatile int clk_sec = 0;
 
 // ms is a value from 0 to 7999 (8 second cycle)
 void ms_to_colors( int ms, uint8_t *color_vals )
@@ -137,6 +137,51 @@ void update_acrylic_leds( uint8_t vals[3] )
     }
 }
 
+
+void lf_counter_callback(void)
+{
+    char time_str[5];
+    
+    FRAME_SYNC_Write(~FRAME_SYNC_Read());
+    
+    ++clk_sec;
+    
+    if (!splashing_flag)
+    {
+        sprintf( time_str, "%2d%02d", clk_hrs, clk_min );
+        get_pels_from_str( time_str, 0, 5, str_pels );
+        
+        if (clk_sec & 1)
+            str_pels[0][0] &= 0x7F;
+        else
+            str_pels[0][0] |= 0x80;
+            
+        get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, 0 );
+        put_cmds_to_disp( disp_cmds );
+    }
+    
+    if (clk_sec == 60)
+    {
+        clk_sec = 0;
+        ++clk_min;
+
+        if (clk_min == 60)
+        {
+            clk_min = 0;
+            if (clk_hrs == 12)
+                clk_hrs = 1;
+            else
+                clk_hrs++;
+        }
+
+        sprintf( time_str, "%2d%02d", clk_hrs, clk_min );
+        get_pels_from_str( time_str, 0, 5, str_pels );
+        get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, 0 );
+        put_cmds_to_disp( disp_cmds );
+    }
+    CyDelay(1);
+}
+
 int main(void)
 {
     char the_string[]  = "ROAR   TCNJ Engineering -- Designing The Future!!!!    ";
@@ -159,12 +204,14 @@ int main(void)
     CyGlobalIntEnable;
 
     isr_1_Start();
-    isr_1_hz_Start();
+    // isr_1_hz_Start();    // Now using the internal low frequency counter!
+    // RTC_Counter_Start();
     SPIM_Start();
     SPI_1_Start();
-    PWM_1_Start();
-    RTC_Counter_Start();
-    
+    PrISM_1_Start();
+    Timer_1_Start();
+    CySysWdtSetInterruptCallback(0, lf_counter_callback);
+    CySysWdtEnableCounterIsr(0);
     configure_max7219();
     
     uint8_t color_vals[3];
@@ -197,6 +244,8 @@ int main(void)
             if (SW_HRS_Read() && SW_MIN_Read())
                 // Fast forward if either button down
                 CyDelay(33);
+            else
+                CyDelay(4);
                 
             count_ms += 33;
             ms_to_colors( count_ms % 8000, color_vals );
@@ -214,7 +263,8 @@ int main(void)
         ms_to_colors( count_ms % 8000, color_vals );
         update_acrylic_leds( color_vals );
         
-        isr_1_hz_Disable();
+        CySysWdtDisableCounterIsr(0);
+        //isr_1_hz_Disable();
         if (SW_HRS_Read())
         {
             sw_hrs_down = 0;    // button is up
@@ -281,7 +331,8 @@ int main(void)
         get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, 0 );
         put_cmds_to_disp( disp_cmds );
 
-        isr_1_hz_Enable();
+        CySysWdtEnableCounterIsr(0);
+ //       isr_1_hz_Enable();
     } // while (1) for lights
 }
 

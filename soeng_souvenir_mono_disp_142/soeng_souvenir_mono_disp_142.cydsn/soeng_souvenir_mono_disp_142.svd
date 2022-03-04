@@ -7,63 +7,6 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>RTC_Counter</name>
-      <description>No description available</description>
-      <baseAddress>0x0</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x0</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>COUNTER</name>
-          <description>Current counter value</description>
-          <addressOffset>0x40200108</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>CC</name>
-          <description>Compare / capture value</description>
-          <addressOffset>0x4020010C</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>CC_BUF</name>
-          <description>Compare / capture buffer value</description>
-          <addressOffset>0x40200110</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>PERIOD</name>
-          <description>Period value</description>
-          <addressOffset>0x40200114</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>PERIOD_BUF</name>
-          <description>Period buffer value</description>
-          <addressOffset>0x40200118</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
       <name>SPI_1</name>
       <description>Serial Communication Block</description>
       <baseAddress>0x0</baseAddress>
@@ -2240,7 +2183,64 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>PWM_1</name>
+      <name>PrISM_1</name>
+      <description>PrISM</description>
+      <baseAddress>0x0</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x0</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>PrISM_SEED</name>
+          <description>Current seed value</description>
+          <addressOffset>0x400F0003</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PrISM_POLYNOM</name>
+          <description>Polynomial</description>
+          <addressOffset>0x400F0013</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PrISM_DENSITY0</name>
+          <description>Pulse Density 0</description>
+          <addressOffset>0x400F0023</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PrISM_DENSITY1</name>
+          <description>Pulse Density 1</description>
+          <addressOffset>0x400F0033</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>PrISM_SEED_COPY</name>
+          <description>Start seed value</description>
+          <addressOffset>0x400F0043</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>Timer_1</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -2252,7 +2252,7 @@
         <register>
           <name>COUNTER</name>
           <description>Current counter value</description>
-          <addressOffset>0x40200188</addressOffset>
+          <addressOffset>0x40200108</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -2261,7 +2261,7 @@
         <register>
           <name>CC</name>
           <description>Compare / capture value</description>
-          <addressOffset>0x4020018C</addressOffset>
+          <addressOffset>0x4020010C</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -2270,7 +2270,7 @@
         <register>
           <name>CC_BUF</name>
           <description>Compare / capture buffer value</description>
-          <addressOffset>0x40200190</addressOffset>
+          <addressOffset>0x40200110</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -2279,7 +2279,7 @@
         <register>
           <name>PERIOD</name>
           <description>Period value</description>
-          <addressOffset>0x40200194</addressOffset>
+          <addressOffset>0x40200114</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -2288,7 +2288,7 @@
         <register>
           <name>PERIOD_BUF</name>
           <description>Period buffer value</description>
-          <addressOffset>0x40200198</addressOffset>
+          <addressOffset>0x40200118</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>

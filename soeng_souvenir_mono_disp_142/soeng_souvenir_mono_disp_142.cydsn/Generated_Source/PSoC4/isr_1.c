@@ -170,18 +170,31 @@ CY_ISR(isr_1_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START isr_1_Interrupt` */
-    if (cur_sound_idx < (int) NUM_SAMPS)
+    static int val;
+    
+    #define FADE_PER (1000)
+    
+    if (cur_sound_idx < FADE_PER)
     {
-        int val = roar[cur_sound_idx] - 128;
+        val = cur_sound_idx * roar[cur_sound_idx] / FADE_PER;
         
-        //val = val * 2;
-        if (val > 126)  val = 126; 
-        if (val < -126) val = -126;
-        PWM_1_WriteCompare(val + 128);
-        
-        ++cur_sound_idx;
+        PrISM_1_WritePulse0(val);
     }
-    PWM_1_ClearInterrupt(PWM_1_INTR_MASK_TC);
+    else if (cur_sound_idx < (int) NUM_SAMPS)
+    {
+        val = roar[cur_sound_idx];
+        
+        PrISM_1_WritePulse0(val);
+    }
+    else if (cur_sound_idx < (int) (NUM_SAMPS + (1 << 15)) )
+        PrISM_1_WritePulse0( ((NUM_SAMPS + (1<<15) - cur_sound_idx)*val) >> 15);
+    else
+        PrISM_1_WritePulse0(0);
+        
+    ++cur_sound_idx;
+    if (cur_sound_idx == 22050*5) cur_sound_idx=0;
+    
+    Timer_1_ClearInterrupt(Timer_1_INTR_MASK_TC);
     isr_1_ClearPending();
     
     /* `#END` */
