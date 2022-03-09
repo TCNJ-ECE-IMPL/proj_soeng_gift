@@ -269,7 +269,7 @@ static void ClockSetup(void)
 
 	(void)CyIntSetVector(8u, &CySysWdtIsr);
 	CyIntEnable(8u);
-	CY_SET_REG32((void *)(CYREG_WDT_MATCH), 0x00007FFEu);
+	CY_SET_REG32((void *)(CYREG_WDT_MATCH), 0x000003FFu);
 	CY_SET_REG32((void *)(CYREG_WDT_CONFIG), 0x40000005u);
 	CY_SET_REG32((void *)(CYREG_WDT_CONTROL), 0x00000008u);
 	while ((CY_GET_XTND_REG32((void CYFAR *)(CYREG_WDT_CONTROL)) & 0x00000008u) != 0u) { }
