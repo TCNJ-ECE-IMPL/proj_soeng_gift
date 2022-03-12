@@ -30,7 +30,7 @@
 #include "project.h"
 #include "roar_dat.h"
     
-static int cur_sound_idx = 0;
+volatile int cur_sound_idx = 0;
     
 #define NUM_SAMPS (sizeof(roar))
     
@@ -172,11 +172,12 @@ CY_ISR(isr_1_Interrupt)
     /* `#START isr_1_Interrupt` */
     static int val;
     
-    #define FADE_PER (1000)
+    #define LOG2_FADE_PER (10)
+    #define FADE_PER (1 << LOG2_FADE_PER)
     
     if (cur_sound_idx < FADE_PER)
     {
-        val = cur_sound_idx * roar[cur_sound_idx] / FADE_PER;
+        val = (cur_sound_idx * roar[cur_sound_idx]) >> LOG2_FADE_PER;
         
         PrISM_1_WritePulse0(val);
     }
@@ -186,17 +187,19 @@ CY_ISR(isr_1_Interrupt)
         
         PrISM_1_WritePulse0(val);
     }
-    else if (cur_sound_idx < (int) (NUM_SAMPS + (1 << 15)) )
-        PrISM_1_WritePulse0( ((NUM_SAMPS + (1<<15) - cur_sound_idx)*val) >> 15);
+    else if (cur_sound_idx < (int) (NUM_SAMPS + FADE_PER) )
+    {    
+        PrISM_1_WritePulse0( ((NUM_SAMPS + FADE_PER - cur_sound_idx)*val) >> LOG2_FADE_PER);
+    }
     else
         PrISM_1_WritePulse0(0);
-        
-    ++cur_sound_idx;
-    if (cur_sound_idx == 22050*5) cur_sound_idx=0;
-    
+
+    if (cur_sound_idx < (int) (NUM_SAMPS + FADE_PER) )
+        ++cur_sound_idx;
+
     Timer_1_ClearInterrupt(Timer_1_INTR_MASK_TC);
     isr_1_ClearPending();
-    
+  
     /* `#END` */
 }
 

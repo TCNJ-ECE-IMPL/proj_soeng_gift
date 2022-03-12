@@ -1,0 +1,37 @@
+LED Array
+Interface: SPI, 4 Mbit/sec SPI rate, 16 bits, CPOL=0, CPHA=0
+Input Clock: 8 MHz
+
+Notes:
+    Writing the entire display requires 32 transfers.  Each one takes 16 bits, hence at least 17 cycles.  Assume 18 cycles.
+    In each 16 bit transfer, first 8 bits are "command", the 8 bit value.
+    Total 288 bits x 0.250 usec/bit = 72 usec
+    
+
+
+Acrylic LEDs
+Interface: SPI, 8 Mbit/sec SPI rate, 10 bits, entire string must be all one transaction!
+Input Clock: 48 MHz (internally divided by 6), effective SPI bit rate is 8 MHz
+    300 bits of zero, for RESET
+    Then 5 x 24 bits = 120 bits
+    Total of 420 bits per update
+    SPI bit rate 8 Mbits/sec, each SPI bit is a chip
+    Chips per payload bit 10
+    Payload bit rate = 800 kbits/sec (1.25 usec per payload bit)
+    Update time = 420 x 1.25 = 525 usec
+    
+
+isr_1
+    Counter, period = 1088
+    24 MHz clock
+    Interrupt frequency = 22.059 KHz
+    Audio sample rate (ideally 22.050 KHz)
+    
+
+WDT0 (Low Frequency Timer 0)
+Configured in Design Wide Resources --> Clocks --> Configure System Clocks --> Low Frequency Clocks
+Divider: 32767
+Results in 1 Hz interrupt
+
+
+    
