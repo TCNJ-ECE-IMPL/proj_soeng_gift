@@ -33,8 +33,18 @@ void lf_counter_callback(void)
     static uint16_t    disp_cmds[8][4];
     static char        time_str[5];
     
+    int         hrs_button;
+    int         min_button;
+    int         eith_btn;
+    int         both_btn;
+    
     // Output pin for helping debug
     FRAME_SYNC_Write(~FRAME_SYNC_Read());
+
+    hrs_button = !SW_HRS_Read();
+    min_button = !SW_MIN_Read();
+    eith_btn   = hrs_button || min_button;
+    both_btn   = hrs_button && min_button;
 
     ++lf_ticks;
     count_ms += 31; // actually 31.25
@@ -70,9 +80,12 @@ void lf_counter_callback(void)
                 get_disp_cmds_frac_shift( str_pels, frac_shift_idx, disp_cmds, 0 );
                 put_cmds_to_disp( disp_cmds );
                 
-                ++frac_shift_idx;
+                if (eith_btn)
+                    frac_shift_idx += 4;
+                else
+                    ++frac_shift_idx;
                 
-                if (frac_shift_idx == 8)
+                if (frac_shift_idx >= 8)
                 {
                     frac_shift_idx = 0;
                     ++banner_shift_idx;
@@ -90,30 +103,67 @@ void lf_counter_callback(void)
         sprintf( time_str, "%2d%02d", clk_hrs, clk_min );
         get_pels_from_str( time_str, 0, 5, str_pels );
         
-        if (clk_sec & 1)
-            str_pels[0][0] &= 0x7F;
+        // uint8_t str_pels[5][8];
+        // Want to right shift the words in [2][] and [3][] by 1, to make space for colon!
+        for (int digit_idx = 2; digit_idx <= 3; ++digit_idx)
+        {
+            for (int row_idx = 0; row_idx < 8; ++row_idx)
+            {
+                str_pels[digit_idx][row_idx] = str_pels[digit_idx][row_idx] >> 2;
+            }
+        }
+        
+        // Blink/draw colon
+//        if (clk_sec & 1)
+        if (clk_sec & 0)
+        {
+            str_pels[1][1] &= 0xFE;
+            str_pels[1][2] &= 0xFE;
+            str_pels[1][4] &= 0xFE;
+            str_pels[1][5] &= 0xFE;
+            str_pels[2][1] &= 0x7F;
+            str_pels[2][2] &= 0x7F;
+            str_pels[2][4] &= 0x7F;
+            str_pels[2][5] &= 0x7F;
+        }
         else
-            str_pels[0][0] |= 0x80;
-            
+        {
+            str_pels[1][1] |= 0x01;
+            str_pels[1][2] |= 0x01;
+            str_pels[1][4] |= 0x01;
+            str_pels[1][5] |= 0x01;
+            str_pels[2][1] |= 0x80;
+            str_pels[2][2] |= 0x80;
+            str_pels[2][4] |= 0x80;
+            str_pels[2][5] |= 0x80;
+        }        
+
         get_disp_cmds_frac_shift( str_pels, 0, disp_cmds, 0 );
         put_cmds_to_disp( disp_cmds );
     }
     
     if (clk_sec == 60)
     {
-        cur_sound_idx   = 0;    // On the hour <for testing, on the minute>, restart the ROAR sound
-        splashing_flag  = 1;    // On the hour <for testing, on the minute>, do the banner display
-
         clk_sec = 0;
         ++clk_min;
 
         if (clk_min >= 60)
         {
+            cur_sound_idx   = 0;    // On the hour <for testing, on the minute>, restart the ROAR sound
+            animation_count = 0;    // On the hour <for testing, on the minute>, do the banner display
+            splashing_flag  = 1;    // On the hour <for testing, on the minute>, do the banner display
+
             clk_min = 0;
             if (clk_hrs >= 12)
                 clk_hrs = 1;
             else
                 clk_hrs++;
         }
+    }
+    if (both_btn)
+    {
+        cur_sound_idx   = 0;    // both buttons: restart the ROAR sound
+        animation_count = 0;    // both buttons: do the banner display
+        splashing_flag  = 1;    // both buttons: do the banner display
     }
 }
