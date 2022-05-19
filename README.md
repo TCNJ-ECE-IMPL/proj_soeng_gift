@@ -1,5 +1,8 @@
 # proj_soeng_gift
-This is the PSoC 4 project, and code, for the TCNJ School of Engineering Roaring Clock.
+This is the PSoC 4 project, and code, for the TCNJ School of Engineering Roaring Clock.  
+
+## Credit: Elli Lopez, for original lion figure design  
+![Roar Clock Photo](Lion_Clock_ROAR_gold.jpg)
 
 **NOTES:**  
 1. The project is developed using the Cypress/Infineon PSoC Creator IDE.  It can be downloaded for free (only for Windows) [here](https://www.infineon.com/cms/en/design-support/tools/sdk/psoc-software/psoc-creator/?utm_source=cypress&utm_medium=referral&utm_campaign=202110_globe_en_all_integration-training), hit the big **Download** button.
