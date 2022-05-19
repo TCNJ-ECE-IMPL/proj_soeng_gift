@@ -2,7 +2,7 @@
 This is the PSoC 4 project, and code, for the TCNJ School of Engineering Roaring Clock.  
 
 ## Credit: Elli Lopez, for original lion figure design  
-![Roar Clock Photo](Lion_Clock_ROAR_gold.jpg)
+![Roar Clock Photo](info/Lion_Clock_ROAR_gold.jpg)
 
 **NOTES:**  
 1. The project is developed using the Cypress/Infineon PSoC Creator IDE.  It can be downloaded for free (only for Windows) [here](https://www.infineon.com/cms/en/design-support/tools/sdk/psoc-software/psoc-creator/?utm_source=cypress&utm_medium=referral&utm_campaign=202110_globe_en_all_integration-training), hit the big **Download** button.
@@ -26,3 +26,7 @@ This 3-line sequence of procedure calls is a key part of the display:
         - `get_disp_cmds_frac_shift( str_pels, frac_shift_idx, disp_cmds, 0 );` - extracts the fractionally shifted set of pixels for the 4-character display, and converts them to display commands.  
         - `put_cmds_to_disp( disp_cmds );` - sends the display commands to the display device.  
 - `isr1.c` -- the procedure `isr_1_Interrupt` is called 22,059 times per second.  This is done to approximately match the 22,050 Hz sample rate of the sampled lion roar sound.  This sound is represented in the array `const uint8_t roar[]`, which is in the file `sound_dat.h`.  The index of the current sample is maintained in the variable `cur_sound_idx`, which cycles from 0 to `NUM_SAMPS + FADE_PER`.  Note that the sound fades up and down to avoid clicks.
+
+## Printed Circuit Board Design
+Eagle CAD PCB design files are also in GitHub, [here](https://github.com/pearlste/EAGLE/tree/main/soeng_prototype_1)  
+![PCB Schematic](info/pcb_eagle_schematic_captioned.png)
