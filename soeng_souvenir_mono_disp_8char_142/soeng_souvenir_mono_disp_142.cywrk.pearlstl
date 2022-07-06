@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h">
+<ExpandedNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Pins</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Analog</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Clocks</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Interrupts</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\System</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Directives</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Flash Security</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\acrylic_led_strip.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\cyapicallbacks.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\led_mat_displ.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\lf_counter_callback.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\roar_dat.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\tcnj_config.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\acrylic_led_strip.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\led_mat_displ.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\lf_counter_callback.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\main.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\isr_1</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Pins</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Analog</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Clocks</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Interrupts</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\System</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Directives</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Flash Security</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\acrylic_led_strip.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\cyapicallbacks.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\led_mat_displ.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\lf_counter_callback.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\roar_dat.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\tcnj_config.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\acrylic_led_strip.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\led_mat_displ.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\lf_counter_callback.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\main.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\Clock_1</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\Clock_2</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\Clock_4</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cy_boot</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cy_lfclk</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\FRAME_SYNC</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\isr_1</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\isr_1\isr_1.c</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\isr_1\isr_1.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\LED_DOUT</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\MISO</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\MOSI</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\PrISM_1</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\PWM</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SCLK</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SPI_1</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SPI_1_SCBCLK</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SPIM</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SS</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SW_HRS</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SW_MIN</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142">
+<ExpandedNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\acrylic_led_strip.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_4.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\FRAME_SYNC.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\FRAME_SYNC_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\isr_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_DOUT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_DOUT_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\led_mat_displ.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\lf_counter_callback.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MISO.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MISO_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MOSI.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MOSI_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PrISM_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PrISM_1_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SCLK.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SCLK_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_BOOT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SCBCLK.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI_BOOT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI_UART.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM_INT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SS.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SS_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_HRS.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_HRS_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_MIN.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SW_MIN_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\soeng_souvenir_mono_disp_142.elf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\soeng_souvenir_mono_disp_142.hex</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\soeng_souvenir_mono_disp_142.map</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.gpdsc</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.rpt</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\acrylic_led_strip.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_4.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\FRAME_SYNC.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\FRAME_SYNC_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\isr_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_DOUT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_DOUT_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\led_mat_displ.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\lf_counter_callback.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MISO.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MISO_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MOSI.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\MOSI_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PrISM_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PrISM_1_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SCLK.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SCLK_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_BOOT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_PM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SCBCLK.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI_BOOT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPI_1_SPI_UART.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM_INT.lst</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\CortexM0\ARM_GCC_541\Debug\Listing Files\SPIM_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142">
+<ExpandedNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PSoC 4 Architecture TRM</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PSoC 4200 BLE Family Datasheet</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides\cy_boot_v6_10</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides\cy_lfclk_v1_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_clock_v2_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_constant_v1_0</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_isr_v1_71.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_pins_v2_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PrISM_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\SCB_P4_v4_0.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\SPI_Master_v2_50.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PSoC 4 Architecture TRM</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PSoC 4200 BLE Family Datasheet</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides\cy_boot_v6_10</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\System Reference Guides\cy_lfclk_v1_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_clock_v2_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_constant_v1_0</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_isr_v1_71.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_pins_v2_20</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\PrISM_v2_20.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\SCB_P4_v4_0.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\SPI_Master_v2_50.pdf</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\main.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\fonts.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1484, 610" SelectedTabbedMdiWindow="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="12c6573b-95dc-45c9-9735-33080cfec6b5" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\main.c" Guid="2294af27-c629-4b49-a8f9-e5385c0b60e2" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" Guid="6ec5379d-c9b0-4f57-8ee7-77017677e1ce" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" Guid="5037d774-50e3-42d5-a4fd-d1673946aad6" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" Guid="2a5e980f-6b99-491c-b612-67108c89bd15" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" Guid="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\fonts.h" Guid="a2cdcd2b-d21f-47cd-9e0a-c8fb4783b421" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
