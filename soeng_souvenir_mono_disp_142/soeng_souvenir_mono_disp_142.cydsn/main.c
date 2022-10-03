@@ -39,14 +39,14 @@ int main(void)
         while (lf_ticks == prev_lf_ticks) {}
         prev_lf_ticks = lf_ticks;
 
-        ms_to_colors( count_ms % 8000, color_vals );
+        ms_to_colors( count_ms , color_vals );
         update_acrylic_leds( color_vals );
         
         if (SW_HRS_Read())
         {
             sw_hrs_down = 0;    // button is up
         }
-        else
+        else if (SW_MIN_Read())
         {
             if (sw_hrs_down == 0)
             {

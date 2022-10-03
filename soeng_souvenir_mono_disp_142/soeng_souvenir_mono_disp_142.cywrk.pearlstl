@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\lf_counter_callback.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\acrylic_led_strip.c">
 <ExpandedNodeIds>
 <v>soeng_souvenir_mono_disp_142</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
@@ -26,6 +26,7 @@
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\System</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Directives</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Flash Security</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\acrylic_led_strip.h</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\cyapicallbacks.h</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h</v>
@@ -55,6 +56,13 @@
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Directives</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydwr\Flash Security</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\acrylic_led_strip.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\cyapicallbacks.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\led_mat_displ.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\lf_counter_callback.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\roar_dat.h</v>
+<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\tcnj_config.h</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\acrylic_led_strip.c</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Source Files\led_mat_displ.c</v>
@@ -84,13 +92,6 @@
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SS</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SW_HRS</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\SW_MIN</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\Timer_1</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cycodeshareexport.ld</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cycodeshareimport.ld</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cycodeshareimport.scat</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cydevice_trm.h</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
-<v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142">
@@ -278,7 +279,15 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" />
-<name v=".\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\main.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\project.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\isr_1.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\soeng_souvenir_mono_disp_142.cydwr" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\Cm0Start.c" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\acrylic_led_strip.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -286,7 +295,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1484, 610" SelectedTabbedMdiWindow="ddda22be-335e-42a3-b89d-c93d5d254cb0"><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" Guid="ddda22be-335e-42a3-b89d-c93d5d254cb0" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" Guid="1808b8fe-503e-4049-af5c-afaa49e4e3b5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1484, 610" SelectedTabbedMdiWindow="ddda22be-335e-42a3-b89d-c93d5d254cb0"><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" Guid="ddda22be-335e-42a3-b89d-c93d5d254cb0" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\main.c" Guid="6bd43742-d09a-4ed3-85e7-5e9f8abeebd8" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" Guid="8ffda46d-96f4-4b94-a591-8c23771276d7" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\TopDesign\TopDesign.cysch" Guid="ba7abe1a-2323-475a-8f81-c99b6095756e" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\project.h" Guid="62353a42-767d-4278-b015-f48cd23183db" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\isr_1.c" Guid="ecf35d4a-a4b3-4f47-b87e-db76f8b72fd0" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\soeng_souvenir_mono_disp_142.cydwr" Guid="8ded1911-1525-4773-a93e-2179919a8a02" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\Generated_Source\PSoC4\Cm0Start.c" Guid="15d56e8f-38b5-4fb5-ad33-33b2a4f26559" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="12c6573b-95dc-45c9-9735-33080cfec6b5" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" Guid="c25a57ea-232a-4987-9042-2f8d35ed7fd7" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142.cydsn\acrylic_led_strip.c" Guid="8ccf3995-d47f-422c-b98f-520f757ddca9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

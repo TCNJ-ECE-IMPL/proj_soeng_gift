@@ -34,33 +34,43 @@ void ms_to_colors( int ms, uint8_t *color_vals )
     int g;
     int b;
     
+    static int cycle_cnt = 0;
+    
+    int idx;
     int fade;
     
-    // cross from yellow to blue, then blue for 3 secs, the cross from blue to yellow, then yellow for 3 secs
-    if (ms < 1000)
-    {
-        fade = 256 * ms / 1000;
-        
-        b = fade;
-        r = g = 255-fade;
-    }
-    else if (ms < 4000)
-    {
-        b = 255;
-        r = g = 0;
-    }
-    else if (ms < 5000)
-    {
-        fade = 256 * (ms-4000) / 1000;
-        b = 255-fade;
-        r = g = fade;
-    }
-    else
-    {
-        b = 0;
-        r = g = 255;
-    }
+    // 8.192 seconds per third
     // order is GRB!
+    idx = ms & 8191;
+    fade = idx >> 5;    // 0-255
+    
+    if (idx < 40)
+    {
+        if (cycle_cnt == 2)
+            cycle_cnt = 0;
+        else
+            cycle_cnt++;
+    }
+    
+    switch (cycle_cnt)
+    {
+        case 0:
+            b = 0;
+            r = 255-fade;
+            g = fade;
+            break;
+        case 1:
+            r = 0;
+            g = 255-fade;
+            b = fade;
+            break;
+        default:
+            g = 0;
+            b = 255-fade;
+            r = fade;
+            break;
+    }
+    
     color_vals[0] = g;
     color_vals[1] = r;
     color_vals[2] = b;
