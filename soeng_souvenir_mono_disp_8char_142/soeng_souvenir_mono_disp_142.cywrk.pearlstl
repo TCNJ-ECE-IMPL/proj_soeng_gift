@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\fonts.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142\Header Files\tcnj_config.h">
 <ExpandedNodeIds>
 <v>soeng_souvenir_mono_disp_142</v>
 <v>soeng_souvenir_mono_disp_142\soeng_souvenir_mono_disp_142</v>
@@ -284,6 +284,7 @@
 <name v=".\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" />
 <name v=".\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" />
 <name v=".\soeng_souvenir_mono_disp_142.cydsn\fonts.h" />
+<name v=".\soeng_souvenir_mono_disp_142.cydsn\acrylic_led_strip.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -291,7 +292,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1484, 610" SelectedTabbedMdiWindow="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="12c6573b-95dc-45c9-9735-33080cfec6b5" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\main.c" Guid="2294af27-c629-4b49-a8f9-e5385c0b60e2" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" Guid="6ec5379d-c9b0-4f57-8ee7-77017677e1ce" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" Guid="5037d774-50e3-42d5-a4fd-d1673946aad6" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" Guid="2a5e980f-6b99-491c-b612-67108c89bd15" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" Guid="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\fonts.h" Guid="a2cdcd2b-d21f-47cd-9e0a-c8fb4783b421" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1484, 610" SelectedTabbedMdiWindow="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="12c6573b-95dc-45c9-9735-33080cfec6b5" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\main.c" Guid="2294af27-c629-4b49-a8f9-e5385c0b60e2" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\lf_counter_callback.c" Guid="6ec5379d-c9b0-4f57-8ee7-77017677e1ce" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.c" Guid="5037d774-50e3-42d5-a4fd-d1673946aad6" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\led_mat_displ.h" Guid="2a5e980f-6b99-491c-b612-67108c89bd15" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\tcnj_config.h" Guid="7a3e9d63-25f6-46a7-8eaf-f3c3481c253f" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\fonts.h" Guid="a2cdcd2b-d21f-47cd-9e0a-c8fb4783b421" /><DocumentWindow Key="C:\Users\pearlstl\Documents\_Research\projects\proj_soeng_gift\soeng_souvenir_mono_disp_8char_142\soeng_souvenir_mono_disp_142.cydsn\acrylic_led_strip.c" Guid="9d9555b3-34e0-4a6a-b704-44ab70fdba35" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

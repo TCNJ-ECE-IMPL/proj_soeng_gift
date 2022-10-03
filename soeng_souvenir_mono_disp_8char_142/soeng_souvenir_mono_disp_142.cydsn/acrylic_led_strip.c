@@ -66,7 +66,7 @@ void ms_to_colors( int ms, uint8_t *color_vals )
     color_vals[2] = b;
 }
 
-#define LED_STR_LEN (5)
+#define LED_STR_LEN (11)
 void update_acrylic_leds( uint8_t vals[3] )
 {
     // First send reset ... at least 50 usec
