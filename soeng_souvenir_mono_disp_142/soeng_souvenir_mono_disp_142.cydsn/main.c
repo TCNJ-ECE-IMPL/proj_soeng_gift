@@ -39,7 +39,7 @@ int main(void)
         while (lf_ticks == prev_lf_ticks) {}
         prev_lf_ticks = lf_ticks;
 
-        ms_to_colors( count_ms % 8000, color_vals );
+        ms_to_colors( count_ms & 0xFFFF, color_vals );
         update_acrylic_leds( color_vals );
         
         if (SW_HRS_Read())

@@ -27,7 +27,7 @@
 #define ZER_BIT (0x380)
 #define ONE_BIT (0x3F8)
 
-// ms is a value from 0 to 7999 (8 second cycle)
+// ms is a value from 0 to 8191 (~8 second cycle)
 void ms_to_colors( int ms, uint8_t *color_vals )
 {
     int r;
@@ -37,21 +37,21 @@ void ms_to_colors( int ms, uint8_t *color_vals )
     int fade;
     
     // cross from yellow to blue, then blue for 3 secs, the cross from blue to yellow, then yellow for 3 secs
-    if (ms < 1000)
+    if (ms < 512)
     {
-        fade = 256 * ms / 1000;
+        fade = 256 * ms / 512;
         
         b = fade;
         r = g = 255-fade;
     }
-    else if (ms < 4000)
+    else if (ms < 32768)
     {
         b = 255;
         r = g = 0;
     }
-    else if (ms < 5000)
+    else if (ms < 32768+512)
     {
-        fade = 256 * (ms-4000) / 1000;
+        fade = 256 * (ms-32768) / 512;
         b = 255-fade;
         r = g = fade;
     }
